@@ -51,11 +51,4 @@ app.on('message', (msg) => {
     }
 });
 
-app.on("guildCreate", (guild) => {
-    // This event triggers when the bot joins a guild.    
-    console.log(`Joined new guild: ${guild.name}`);
-});
-
-
-
 app.login(token);
