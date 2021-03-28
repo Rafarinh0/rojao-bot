@@ -35,6 +35,7 @@ app.on('message', (msg) => {
     if (msg.content === `${prefix}rojao` || msg.content === `${prefix}rojão` && msg.member.voice.channel && !msg.author.bot) {
         msg.member.voice.channel.join().then(connection => {
             const dispatcher = connection.play('rojao.mp3');
+            dispatcher.volume(1);
             msg.reply('PAPAPUPU 🎆🎇PAPUL🎆🎇🎇🎆FIIILLLPUUUUUPOWPOWPOWPOW🎇🎇🎇🎆🎆🎆PAPAPAPATRATRATRATRATRA🎇🎆🎇🎆🎇🎆🎇🎆🎇TATATATATAFIIIIILLLFIIIIILLLLFIIIIIIILLLPOOOWWWWWW🎇🎆🎇🎆🎇🎆🎇🎇🎆PAPAPAPAPUPUPUPUPU🎉🎉🎉🎊🎊🎊🎉PAPAPUPU🎆🎇PAPUL🎆FIIILLLPUUUUUPOWPOWPOWPAPAPAPATRATRATRATRA')
             dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
         });
